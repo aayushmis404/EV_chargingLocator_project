@@ -14,7 +14,7 @@
         <div class="sidebar-section">
           <h3>Search</h3>
           <div class="input-wrap">
-            <span class="input-icon">Search</span>
+            <span class="input-icon"></span>
             <input
               v-model="searchQuery"
               type="text"
@@ -172,6 +172,21 @@
 
       </main>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-brand">
+        <div class="footer-logo">ChargeNP</div>
+        <p>Built for Nepal's growing EV community.</p>
+      </div>
+      <div class="footer-links">
+        <RouterLink to="/find">Find Stations</RouterLink>
+        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/station-login">Station Owner</RouterLink>
+      </div>
+      <div class="footer-copy">© 2026 ChargeNP. All rights reserved.</div>
+    </footer>
+
   </div>
 </template>
 
@@ -298,11 +313,11 @@ onUnmounted(() => clearInterval(pollTimer))
 
 .find-page {
   min-height: calc(100vh - 65px);
-  background-color: #080a12;
+  background-color: #ffffff;
   background-image: 
     radial-gradient(at 0% 0%, rgba(0, 229, 157, 0.05) 0px, transparent 50%),
     radial-gradient(at 100% 100%, rgba(124, 58, 237, 0.05) 0px, transparent 50%);
-  color: #f1f5f9;
+  color: #000;
   font-family: 'Inter', sans-serif;
 }
 
@@ -316,6 +331,7 @@ onUnmounted(() => clearInterval(pollTimer))
   font-weight: 800;
   letter-spacing: -0.5px;
   margin-bottom: 6px;
+  color:#000;
 }
 
 .page-header p {
@@ -332,7 +348,7 @@ onUnmounted(() => clearInterval(pollTimer))
 
 /* Sidebar */
 .sidebar {
-  background: #0d1323;
+  background: #bbb3b3;
   border-right: 1px solid rgba(255,255,255,0.06);
   padding: 24px 20px;
   overflow-y: auto;
@@ -717,6 +733,48 @@ onUnmounted(() => clearInterval(pollTimer))
 }
 
 .directions-btn:hover { border-color: rgba(255,255,255,0.25); color: #f1f5f9; }
+/* ── Footer ── */
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 40px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: #00e59d;
+  margin-bottom: 6px;
+}
+
+.footer-brand p {
+  color: #475569;
+  font-size: 13px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 28px;
+}
+
+.footer-links a {
+  color: #64748b;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: #00e59d; }
+
+.footer-copy {
+  color: #334155;
+  font-size: 13px;
+}
+
 
 /* Responsive */
 @media (max-width: 900px) {
