@@ -3,19 +3,22 @@
 
     <!-- Hero Section -->
     <section class="hero">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="badge-dot"></span>
-          Live Station Data Across Nepal
+      <div class="hero-left">
+        <div class="badge">
+          <span class="badge-icon">⚡</span>
+          Powering Nepal's EV Future
         </div>
-        <h1 class="hero-title">
+
+        <h1 class="headline">
           Find EV Chargers.<br />
-          <span class="gradient-text">Anywhere in Nepal.</span>
+          Anywhere in <span class="highlight">Nepal. </span>
         </h1>
-        <p class="hero-sub">
-          Real-time charger availability, connector type filters, and one-tap
-          Google Maps navigation — built for Nepali EV drivers.
+
+        <p class="subtext">
+          Real-time availability, connector type filters, and one-tap
+          navigation — built for Nepali EV drivers.
         </p>
+
         <div class="hero-actions">
           <RouterLink to="/find" class="btn-primary">
             Find Stations Now
@@ -24,25 +27,48 @@
             Add Your Station
           </RouterLink>
         </div>
-        <div class="hero-stats">
-          <div class="stat-pill">
-            <strong>{{ stats.stations }}+</strong>
-            <span>Stations</span>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon stat-icon-green">📶</div>
+            <div class="stat-info">
+              <div class="stat-title">Live Data</div>
+              <div class="stat-desc">Real-time station availability</div>
+            </div>
           </div>
-          <div class="stat-pill">
-            <strong>{{ stats.ports }}+</strong>
-            <span>Charging Ports</span>
+
+          <div class="stat-card">
+            <div class="stat-icon stat-icon-amber">🔌</div>
+            <div class="stat-info">
+              <div class="stat-title">20+</div>
+              <div class="stat-desc">Charging Points and growing</div>
+            </div>
           </div>
-          <div class="stat-pill">
-            <strong>{{ stats.cities }}+</strong>
-            <span>Cities Covered</span>
+
+          <div class="stat-card">
+            <div class="stat-icon stat-icon-green">📍</div>
+            <div class="stat-info">
+              <div class="stat-title">10+</div>
+              <div class="stat-desc">Districts Covered</div>
+            </div>
           </div>
-          <div class="stat-pill">
-            <strong>3</strong>
-            <span>Connector Types</span>
+
+          <div class="stat-card">
+            <div class="stat-icon stat-icon-blue">🔌</div>
+            <div class="stat-info">
+              <div class="stat-title">3</div>
+              <div class="stat-desc">Connector Types</div>
+            </div>
           </div>
         </div>
+
+        <div class="free-banner">
+          <span>🌿 <strong>Free to use. Always will be.</strong></span>
+          <span class="divider">|</span>
+          <span>Made with ❤️ in Nepal 🇳🇵</span>
+        </div>
       </div>
+
       <div class="hero-visual">
         <div class="map-glow"></div>
         <div class="map-card">
@@ -78,38 +104,6 @@
             <span class="legend-item"><span class="dot busy"></span> Busy</span>
             <span class="legend-item"><span class="dot offline"></span> Offline</span>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features">
-      <div class="section-label">Why ChargeNP?</div>
-      <h2 class="section-title">Everything an EV driver needs</h2>
-      <div class="features-grid">
-        <div class="feature-card">
-          <h3>Real-Time Map</h3>
-          <p>See all nearby charging stations on an interactive map with live availability status updated every 15 seconds.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Live Availability</h3>
-          <p>Know exactly which ports are free before you leave. Filter by connector type (CCS, Type2, GBT, CHAdeMO) and charge speed.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Transparent Pricing</h3>
-          <p>View per-kWh and per-minute pricing upfront. Compare stations and find the best rates near you.</p>
-        </div>
-        <div class="feature-card">
-          <h3>One-Tap Navigation</h3>
-          <p>Get turn-by-turn directions via Google Maps directly from the station listing. Never get lost again.</p>
-        </div>
-        <div class="feature-card">
-          <h3>User Reviews</h3>
-          <p>Read honest ratings and reviews from the EV community. Share your own experience to help fellow drivers.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Station Management</h3>
-          <p>Station owners get a powerful dashboard to manage ports, update live status, add pricing, and respond to reviews.</p>
         </div>
       </div>
     </section>
@@ -203,11 +197,11 @@ onMounted(async () => {
 
 .home {
   font-family: 'Inter', sans-serif;
-  background-color: #080a12;
+  background-color: #ffffff;
   background-image: 
     radial-gradient(at 50% 0%, rgba(0, 229, 157, 0.05) 0px, transparent 50%),
     radial-gradient(at 0% 100%, rgba(30, 64, 175, 0.05) 0px, transparent 50%);
-  color: #f1f5f9;
+  color: #0f172a;
   min-height: 100vh;
 }
 
@@ -222,21 +216,24 @@ onMounted(async () => {
   margin: 0 auto;
 }
 
-.hero-badge {
+.hero-left {
+  padding-top: 8px;
+}
+
+.badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(0, 229, 157, 0.12);
-  border: 1px solid rgba(0, 229, 157, 0.3);
-  color: #00e59d;
-  padding: 8px 16px;
-  border-radius: 30px;
-  font-size: 13px;
+  background: #eafbea;
+  color: #15803d;
   font-weight: 600;
-  margin-bottom: 28px;
+  font-size: 13px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  margin-bottom: 24px;
 }
 
-.badge-dot {
+.badge-icon{
   width: 7px;
   height: 7px;
   border-radius: 50%;
@@ -249,27 +246,24 @@ onMounted(async () => {
   50% { opacity: 0.5; transform: scale(0.8); }
 }
 
-.hero-title {
-  font-size: 58px;
-  font-weight: 900;
+.headline {
+  font-size: 52px;
   line-height: 1.1;
-  margin-bottom: 20px;
-  letter-spacing: -1.5px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 20px;
 }
 
-.gradient-text {
-  background: linear-gradient(135deg, #00e59d, #00b4d8, #7c3aed);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.highlight {
+  color: #22c55e;
 }
 
-.hero-sub {
+.subtext {
   font-size: 17px;
-  color: #94a3b8;
-  line-height: 1.7;
-  margin-bottom: 36px;
-  max-width: 500px;
+  color: #64748b;
+  line-height: 1.6;
+  max-width: 480px;
+  margin-bottom: 28px;
 }
 
 .hero-actions {
@@ -304,13 +298,13 @@ onMounted(async () => {
   align-items: center;
   gap: 8px;
   background: transparent;
-  color: #e2e8f0;
+  color: #0f172a;
   padding: 14px 28px;
   border-radius: 12px;
   font-weight: 600;
   font-size: 15px;
   text-decoration: none;
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border: 1.5px solid rgba(115, 110, 110, 0.2);
   transition: all 0.3s;
 }
 
@@ -319,30 +313,74 @@ onMounted(async () => {
   color: #00e59d;
 }
 
-.hero-stats {
+/* Stats grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background: #ffffff;
+  border: 1px solid #eef1ee;
+  border-radius: 14px;
+  padding: 14px;
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.stat-pill {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 12px 20px;
-  text-align: center;
+.stat-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
 }
 
-.stat-pill strong {
-  display: block;
-  font-size: 22px;
-  font-weight: 800;
-  color: #00e59d;
+.stat-icon-green {
+  background: #eafbea;
 }
 
-.stat-pill span {
+.stat-icon-amber {
+  background: #fef3e0;
+}
+
+.stat-icon-blue {
+  background: #e6f2ff;
+}
+
+.stat-title {
+  font-weight: 700;
+  font-size: 15px;
+  color: #0f172a;
+}
+
+.stat-desc {
   font-size: 12px;
-  color: #64748b;
+  color: #94a3b8;
+  line-height: 1.3;
+}
+
+/* Free banner */
+.free-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f2faf3;
+  border: 1px solid #dcf3de;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-size: 14px;
+  color: #166534;
+  margin-bottom: 28px;
+}
+
+.divider {
+  color: #cbd5c9;
 }
 
 /* Map Visual */
@@ -498,69 +536,10 @@ onMounted(async () => {
 .dot.busy { background: #ef4444; }
 .dot.offline { background: #64748b; }
 
-/* ── Features ── */
-.features {
-  padding: 100px 80px;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.section-label {
-  color: #00e59d;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-
-.section-title {
-  font-size: 40px;
-  font-weight: 800;
-  letter-spacing: -1px;
-  margin-bottom: 56px;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.feature-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  padding: 32px;
-  transition: all 0.3s;
-}
-
-.feature-card:hover {
-  background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(0, 229, 157, 0.3);
-  transform: translateY(-4px);
-}
-
-.feature-icon {
-  font-size: 36px;
-  margin-bottom: 16px;
-}
-
-.feature-card h3 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.feature-card p {
-  color: #64748b;
-  line-height: 1.7;
-  font-size: 14px;
-}
 
 /* ── How It Works ── */
 .how-it-works {
-  padding: 80px;
+  padding: 0px;
   background: rgba(255, 255, 255, 0.02);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -569,13 +548,14 @@ onMounted(async () => {
 .how-it-works .section-label,
 .how-it-works .section-title {
   text-align: center;
+  color:#000;
 }
 
 .steps {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 80px;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -605,7 +585,7 @@ onMounted(async () => {
 }
 
 .step p {
-  color: #64748b;
+  color: #000;
   font-size: 14px;
   line-height: 1.6;
 }
